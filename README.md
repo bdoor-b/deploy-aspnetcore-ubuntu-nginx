@@ -136,7 +136,7 @@ nohup dotnet Neemah.dll --urls "http://0.0.0.0:5000" &
 ```
 
 > `nohup` ensures the process continues running after logout.
-> `&` runs the application as a background process
+> `&` runs the application as a background process.
 
 
 ---
