@@ -29,7 +29,7 @@ sudo apt install -y wget
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt update
-sudo apt install -y aspnetcore-runtime-8.0  //based on your runtime version
+sudo apt install -y aspnetcore-runtime-8.0  # based on your runtime version
 ```
 
 > Replace `aspnetcore-runtime-8.0` with the correct runtime version if needed.
@@ -136,6 +136,8 @@ nohup dotnet Neemah.dll --urls "http://0.0.0.0:5000" &
 ```
 
 > `nohup` ensures the process continues running after logout.
+> `&` runs the application as a background process
+
 
 ---
 
