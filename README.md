@@ -23,7 +23,7 @@ sudo apt install -y wget
 
 ---
 
-## 3. ⚙Install ASP.NET Core Runtime
+## 3. Install ASP.NET Core Runtime
 
 ```bash
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
