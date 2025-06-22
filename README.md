@@ -36,7 +36,7 @@ sudo apt install -y aspnetcore-runtime-8.0  # based on your runtime version
 
 ---
 
-## 4. Publish Your App (on Local Machine)
+## 4. Publish Your App
 
 ```bash
 dotnet publish -c Release -o "folder-path"
@@ -55,7 +55,7 @@ sudo chown username /var/www/myapp
 
 ---
 
-## 6. Upload Published Files (from Local Machine)
+## 6. Upload Published Files (Using Your User Account)
 
 ```bash
 scp -r "folder-path" username@your-server-ip:/var/www/myapp
