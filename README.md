@@ -1,12 +1,12 @@
 
-# 🚀 Deploy ASP.NET Core on Ubuntu with Nginx
+# Deploy ASP.NET Core on Ubuntu with Nginx
 
 This guide walks you through deploying an ASP.NET Core app on a Linux server using Nginx as a reverse proxy.
 
 ---
 
 
-## 1. 🔐 SSH into the Server
+## 1. SSH into the Server
 
 ```bash
 ssh username@your-server-ip
@@ -14,7 +14,7 @@ ssh username@your-server-ip
 
 ---
 
-## 2. 📦 Install Required Packages
+## 2. Install Required Packages
 
 ```bash
 sudo apt update
@@ -23,7 +23,7 @@ sudo apt install -y wget
 
 ---
 
-## 3. ⚙️ Install ASP.NET Core Runtime
+## 3. ⚙Install ASP.NET Core Runtime
 
 ```bash
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -36,7 +36,7 @@ sudo apt install -y aspnetcore-runtime-8.0  //based on your runtime version
 
 ---
 
-## 4. 📤 Publish Your App (on Local Machine)
+## 4. Publish Your App (on Local Machine)
 
 ```bash
 dotnet publish -c Release -o "folder-path"
@@ -46,7 +46,7 @@ dotnet publish -c Release -o "folder-path"
 
 ---
 
-## 5. 📁 Create Deployment Directory on Server
+## 5. Create Deployment Directory on Server
 
 ```bash
 sudo mkdir -p /var/www/myapp
@@ -55,7 +55,7 @@ sudo chown username /var/www/myapp
 
 ---
 
-## 6. 📡 Upload Published Files (from Local Machine)
+## 6. Upload Published Files (from Local Machine)
 
 ```bash
 scp -r "folder-path" username@your-server-ip:/var/www/myapp
@@ -65,7 +65,7 @@ scp -r "folder-path" username@your-server-ip:/var/www/myapp
 
 ---
 
-## 7. 🚀 Run the App to Test
+## 7. Run the App to Test
 
 ```bash
 cd /var/www/myapp/publish
@@ -76,7 +76,7 @@ dotnet Neemah.dll --urls "http://0.0.0.0:5000"
 
 ---
 
-## 8. 🌐 Install and Start Nginx
+## 8. Install and Start Nginx
 
 ```bash
 sudo apt update
@@ -87,7 +87,7 @@ sudo systemctl enable nginx
 
 ---
 
-## 9. ⚙️ Configure Nginx Site
+## 9. Configure Nginx Site
 
 Create a new file:
 
@@ -119,7 +119,7 @@ server {
 
 ---
 
-## 10. 🔗 Enable Nginx Site and Reload
+## 10. Enable Nginx Site and Reload
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/neemah /etc/nginx/sites-enabled/
@@ -128,7 +128,7 @@ sudo systemctl reload nginx
 
 ---
 
-## 11. 🛠️ Run the App in Background
+## 11. Run the App in Background
 
 ```bash
 cd /var/www/myapp/publish
@@ -139,7 +139,6 @@ nohup dotnet Neemah.dll --urls "http://0.0.0.0:5000" &
 
 ---
 
-## ✅ Done!
 
 Your ASP.NET Core app is now running behind Nginx and accessible at:
 
