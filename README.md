@@ -69,10 +69,10 @@ scp -r "folder-path" username@your-server-ip:/var/www/myapp
 
 ```bash
 cd /var/www/myapp/publish
-dotnet Neemah.dll --urls "http://0.0.0.0:5000"
+dotnet app.dll --urls "http://0.0.0.0:5000"
 ```
 
-> Make sure to replace `Neemah.dll` with your actual DLL name.
+> Make sure to replace `app.dll` with your actual DLL name.
 
 ---
 
@@ -92,7 +92,7 @@ sudo systemctl enable nginx
 Create a new file:
 
 ```bash
-sudo nano /etc/nginx/sites-available/neemah
+sudo nano /etc/nginx/sites-available/app
 ```
 
 Paste the following configuration:
@@ -122,7 +122,7 @@ server {
 ## 10. Enable Nginx Site and Reload
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/neemah /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/
 sudo systemctl reload nginx
 ```
 
@@ -132,7 +132,7 @@ sudo systemctl reload nginx
 
 ```bash
 cd /var/www/myapp/publish
-nohup dotnet Neemah.dll --urls "http://0.0.0.0:5000" &
+nohup dotnet app.dll --urls "http://0.0.0.0:5000" &
 ```
 
 > `nohup` ensures the process continues running after logout.
