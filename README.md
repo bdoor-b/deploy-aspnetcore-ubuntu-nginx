@@ -39,10 +39,9 @@ sudo apt install -y aspnetcore-runtime-8.0  # based on your runtime version
 ## 4. Publish Your App
 
 ```bash
-dotnet publish -c Release -o "folder-path"
+cd "project path"
+dotnet publish -c Release -o 
 ```
-
-> Example: `dotnet publish -c Release -o bin/Release/net8.0/publish`
 
 ---
 
@@ -50,7 +49,7 @@ dotnet publish -c Release -o "folder-path"
 
 ```bash
 sudo mkdir -p /var/www/myapp
-sudo chown username /var/www/myapp
+sudo chown "username" /var/www/myapp
 ```
 
 ---
